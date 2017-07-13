@@ -1,0 +1,17 @@
+<div id="headerwrap">
+    <div class="container">
+        <div class="form">
+            <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg" /></div>
+            <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && login()" autocomplete="off" novalidate>
+                <input type="text" [(ngModel)]="model.username" name="username" #username="ngModel" placeholder="Username " required/>
+                <input type="password" [(ngModel)]="model.password" name="password" #password="ngModel" placeholder="Password" required/>
+                <button [disabled]="loading" type="submit">login</button>
+                <div *ngIf="loginForm.submitted && !username.valid" class="help-block">Username is required</div>
+                <div *ngIf="loginForm.submitted && !password.valid" class="help-block">Password is required</div>
+                <p class="message">Welcome to Starwars!</p>
+            </form>
+        </div>
+
+    </div>
+    <!-- /container -->
+</div>
