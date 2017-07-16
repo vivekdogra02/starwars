@@ -2,6 +2,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 
@@ -16,16 +17,41 @@ import swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   model: any = {};
-  constructor(private http : Http, private loginService: LoginService) { }
+  constructor(private http: Http, 
+  private route: ActivatedRoute,
+        private router: Router,private loginService: LoginService) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.loginService.login(this.model.username, this.model.password).subscribe((resposne)=> {
-     console.log(resposne);
+    this.loginService.login(this.model.username, this.model.password).subscribe((response) => {
+     console.log(response);
+      if (response){
+      swal({
+            title: 'Login! Successfull',
+            text: 'Welcome',
+            type: 'success',
+            confirmButtonText: 'Great'
+          });
+     this.router.navigate(['/search']);
+      }
+      else {
+        swal({
+          title: 'Error!',
+          text: 'Username or password is incorrect',
+          type: 'error',
+          confirmButtonText: 'Retry'
+          });
+      }
     }, (error) => {
-      console.log(error);
+      // swal({
+      //     title: 'Error!',
+      //     text: 'Username or password is incorrect',
+      //     type: 'error',
+      //     confirmButtonText: 'Retry'
+      //     });
+      // console.log(error);
     });
   }
 }

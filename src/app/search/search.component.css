@@ -1,0 +1,20 @@
+.flightCard {
+  background-color: #efefef;
+  -ms-border-radius: 5px;
+  border-radius: 10px;
+  border-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  transition: background-color 0.9s;
+}
+
+.flightCard:hover {
+  background-color: cadetblue;
+  -ms-border-radius: 5px;
+  border-radius: 10px;
+  border-color: #fff;
+  margin: 10px;
+  padding: 10px;
+}
+
+

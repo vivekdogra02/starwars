@@ -21,10 +21,11 @@ i {
 /* HeaderWrap */
 #headerwrap {
     /* background: url(../img/bg01.jpg) no-repeat center top; */
-    background-color: #3498db;
+    background-color: cadetblue;
     padding-top:100px;
     min-height: 100%;
     width: 100%;
+    height: 100%;
 }
 
 #headerwrap h1 {
@@ -50,7 +51,7 @@ i {
     text-align: center;
 }
 .form .thumbnail {
-    background: #3498db;
+    background: black;
     width: 150px;
     height: 150px;
     margin: 0 auto 30px;
@@ -81,7 +82,7 @@ i {
 }
 .form button {
     outline: 0;
-    background: #3498db;
+    background: cadetblue;
     width: 100%;
     border: 0;
     padding: 15px;

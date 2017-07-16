@@ -13,12 +13,15 @@ import { NgModule } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { RouterModule } from '@angular/router';
 import { SearchComponent } from './search/search.component';
+import { SearchPipe } from './search/search-pipe';
+import { SearchService } from './search/search.service';
 
 @NgModule({
   declarations: [
     LoginComponent,
     SearchComponent,
-    AppComponent
+    AppComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { SearchComponent } from './search/search.component';
     HttpModule,
     RouterModule.forRoot(AppRoutes)
   ],
-  providers: [LoginService],
+  providers: [LoginService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

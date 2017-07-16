@@ -1,3 +1,23 @@
-<p>
-  search works!
-</p>
+<div class="container">
+   <h1> Star wars Planets !!!   <i class="fa fa-train" style="font-size:50px;!important"></i></h1>
+<div>
+    <label>Search: </label>
+    <input #searchBox id="search-box"  [(ngModel)] = "searchValue"/>
+</div>  
+<div class="row">
+  <div class="col-md-6" [style.width.%]="item.width" [style.height.%]="item.height" *ngFor="let item of planets | SearchPipe: searchValue ;let i = index" >
+  <div class="flightCard">
+      <h3> {{i +1}} ). Planet Name : {{item.name}}</h3>
+      <i class="fa fa-train" style="font-size:30px;!important"></i>
+      <h2>{{item.population}}</h2>
+  </div>
+  </div>
+  <div class="alert alert-danger text-lg"  *ngIf="!(planets | SearchPipe : searchValue).length" >
+    <h3>
+    <i class="fa fa-meh-o"></i>
+    Oops! No planets matched your query.
+    </h3>
+  </div>
+  
+</div>
+</div>

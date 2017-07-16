@@ -22,7 +22,6 @@
         "styles.css"
       ],
       "scripts": [
-        "node_modules/ng2-swapi/index.ts"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

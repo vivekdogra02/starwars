@@ -1,7 +1,7 @@
 <div id="headerwrap">
     <div class="container">
         <div class="form">
-            <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg" /></div>
+            <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png" /></div>
             <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && login()" autocomplete="off" novalidate>
                 <input type="text" [(ngModel)]="model.username" name="username" #username="ngModel" placeholder="Username " required/>
                 <input type="password" [(ngModel)]="model.password" name="password" #password="ngModel" placeholder="Password" required/>
