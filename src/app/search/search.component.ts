@@ -12,15 +12,12 @@ import { SearchService } from './search.service';
 export class SearchComponent implements OnInit {
   allPlanets$: any;
   planets: any;
-  public width: any;
-  public height: any;
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
   this.allPlanets$ = this.searchService.loadPlanets();
   this.allPlanets$.subscribe(
     (planets) => {
-      console.log(planets);
       this.planets = planets.results;
       for( var i =0 ; i<this.planets.length; i++) {
         if (this.planets[i].population === 'unknown') {

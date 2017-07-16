@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loginService.login(this.model.username, this.model.password).subscribe((response) => {
-     console.log(response);
       if (response){
       swal({
             title: 'Login! Successfull',
@@ -45,13 +44,7 @@ export class LoginComponent implements OnInit {
           });
       }
     }, (error) => {
-      // swal({
-      //     title: 'Error!',
-      //     text: 'Username or password is incorrect',
-      //     type: 'error',
-      //     confirmButtonText: 'Retry'
-      //     });
-      // console.log(error);
+      
     });
   }
 }

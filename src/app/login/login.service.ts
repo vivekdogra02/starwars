@@ -21,9 +21,7 @@ export class LoginService {
                             this.currentUser = el;
                             this.result = true;
                             return this.result;
-                            //return this.currentUser;
                         } else {
-                            console.log('user not found');
                             this.result = false;
                             return this.result;
                         }
